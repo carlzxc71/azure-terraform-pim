@@ -50,8 +50,6 @@ resource "azurerm_role_management_policy" "contributor" {
   }
 }
 
-resource "time_static" "this" {}
-
 resource "azurerm_pim_eligible_role_assignment" "contributor" {
   scope              = azurerm_resource_group.this.id
   role_definition_id = "${data.azurerm_subscription.primary.id}${data.azurerm_role_definition.contributor.id}"
